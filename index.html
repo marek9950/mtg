@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTG Kolekcia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header id="app-header">
+        <div class="top-bar">
+            <div class="logo">MTG <span>Marečková Kolekcia</span></div>
+            <div class="display-controls">
+                <button id="mode-collection" class="mode-btn active"
+                    onclick="switchMode('collection')">Collection</button>
+                <select id="mode-sealed-select" class="mode-btn" style="cursor:pointer; text-align:center;"
+                    onchange="if(this.value) switchMode('sealed', this.value)">
+                    <option value="" disabled selected>Sealed Mode ▼</option>
+                    <option value="normal" style="color:black;">Normal (Random 90)</option>
+                    <option value="monkey" style="color:black;">Opička Friendly</option>
+                </select>
+            </div>
+            <div class="actions">
+                <!-- Header Actions moved to left/center or hidden -->
+            </div>
+
+        </div>
+
+        <nav id="filter-bar">
+            <div id="color-filter">
+                <button class="filter-btn active" data-color="all">Všetky <span class="count-badge"></span></button>
+                <button class="filter-btn white" data-color="W"><span class="mana-icon white"></span> Biela <span
+                        class="count-badge"></span></button>
+                <button class="filter-btn blue" data-color="U"><span class="mana-icon blue"></span> Modrá <span
+                        class="count-badge"></span></button>
+                <button class="filter-btn black" data-color="B"><span class="mana-icon black"></span> Čierna <span
+                        class="count-badge"></span></button>
+                <button class="filter-btn red" data-color="R"><span class="mana-icon red"></span> Červená <span
+                        class="count-badge"></span></button>
+                <button class="filter-btn green" data-color="G"><span class="mana-icon green"></span> Zelená <span
+                        class="count-badge"></span></button>
+                <button class="filter-btn multi" data-color="M"><span class="mana-icon multi"></span> Viacfarebné <span
+                        class="count-badge"></span></button>
+                <button class="filter-btn colorless" data-color="C"><span class="mana-icon colorless"></span> Bezfarebné
+                    <span class="count-badge"></span></button>
+            </div>
+
+            <div id="type-filter">
+                <button class="filter-btn type-btn active" data-type="all">Všetky typy</button>
+                <button class="filter-btn type-btn" data-type="Creature">Creature</button>
+                <button class="filter-btn type-btn" data-type="Instant">Instant</button>
+                <button class="filter-btn type-btn" data-type="Sorcery">Sorcery</button>
+                <button class="filter-btn type-btn" data-type="Enchantment">Enchantment</button>
+                <button class="filter-btn type-btn" data-type="Artifact">Artifact</button>
+                <button class="filter-btn type-btn" data-type="Land">Land</button>
+                <button class="filter-btn type-btn" data-type="Planeswalker">Planeswalker</button>
+                <button class="filter-btn btn-grey" id="filter-dupes-btn">Kópie (2+)</button>
+            </div>
+
+            <div class="stats">
+                <span id="card-count-label">Kariet:</span> <span id="card-count">0</span>
+                <span id="sealed-actions" style="display:none; margin-left: 15px;">
+                    <button id="reroll-pool-btn" class="action-btn small">🎲 New Pool</button>
+                </span>
+            </div>
+        </nav>
+    </header>
+
+    <div id="main-container">
+        <main>
+            <div id="loader" class="loader">
+                <div id="status-text">
+                    Nenašli sa dáta. Vložte <b>.csv</b> súbory do priečinka <b>karty</b> a spustite
+                    <b>AKTUALIZOVAT.bat</b>.
+                </div>
+            </div>
+            <div id="gallery" class="gallery">
+                <!-- Cards inserted here -->
+            </div>
+        </main>
+
+        <div id="deck-builder" class="deck-sidebar">
+            <div class="deck-header">
+                <h2 id="deck-title">Deck Builder</h2>
+                <div class="deck-limits" id="deck-limits"></div>
+                <button id="close-deck-btn">&times;</button>
+            </div>
+
+            <div class="deck-stats" id="deck-stats">
+                <div class="stat-row" style="justify-content: flex-start;">
+                    Počet kariet: <span style="margin-left: 5px; color: #fff; font-weight: bold;">0</span>
+                </div>
+                <div class="mana-curve-container">
+                    <!-- Content injected by JS -->
+                </div>
+            </div>
+
+            <div id="deck-list" class="deck-list" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div class="empty-deck-msg">
+                    Potiahnite sem karty z galérie
+                </div>
+            </div>
+
+            <div class="deck-actions">
+                <button id="copy-deck-btn" class="action-btn">
+                    <span style="display:inline-block; vertical-align:middle; margin-right:6px;">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                    </span> Kopírovať
+                </button>
+                <button id="clear-deck-btn" class="action-btn danger">
+                    <span style="margin-right:5px; font-weight:bold;">✖</span> Vymazať
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content-wrapper">
+            <img class="modal-content" id="modal-img">
+            <button id="modal-add-deck" class="modal-action-btn">+ Pridať do balíka</button>
+        </div>
+        <div id="caption"></div>
+    </div>
+
+    <script src="db.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
