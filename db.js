@@ -1,5 +1,30 @@
 const ALL_CARDS = ` 
 Name,Set code,Set name,Collector number,Foil,Rarity,Quantity,ManaBox ID,Scryfall ID,Purchase price,Misprint,Altered,Condition,Language,Purchase price currency
+Fiery Annihilation,FDN,Foundations,86,normal,uncommon,1,100523,54fe00aa-d284-48f9-b5a2-1bd4c5fa8e58,0.09,false,false,near_mint,en,EUR
+Vampire Nighthawk,FDN,Foundations,186,normal,uncommon,1,101474,0a1934ab-3171-4fc6-8033-ad998899ba73,0.13,false,false,near_mint,en,EUR
+"Tatyova, Benthic Druid",FDN,Foundations,247,foil,uncommon,1,101301,eabc978a-0666-472d-bdc6-d4b29d29eca4,0.2,false,false,near_mint,en,EUR
+Skyknight Squire,FDN,Foundations,301,normal,rare,1,101269,e52d0d34-4d66-4e0d-9d64-bb7786930b7a,0.83,false,false,near_mint,en,EUR
+Strix Lookout,FDN,Foundations,52,normal,common,1,101627,fbd2422e-8e84-4c39-af29-3b4d38baee63,0.03,false,false,near_mint,en,EUR
+Banishing Light,FDN,Foundations,138,normal,common,1,101613,e38dc3b3-1629-491b-8afd-0e7a9a857713,0.04,false,false,near_mint,en,EUR
+Sanguine Syphoner,FDN,Foundations,68,normal,common,1,101582,b1daf5bb-c8e9-4e79-a532-ca92a9a885cd,0.06,false,false,near_mint,en,EUR
+Sower of Chaos,FDN,Foundations,95,normal,common,1,101556,7ff50606-491c-4946-8d03-719b01cfad77,0.02,false,false,near_mint,en,EUR
+Burglar Rat,FDN,Foundations,170,normal,common,1,101608,de1c8758-ce3d-49cf-8173-c0eb46f5e7bc,0.07,false,false,near_mint,en,EUR
+Llanowar Elves,FDN,Foundations,227,normal,common,1,95583,6a0b230b-d391-4998-a3f7-7b158a0ec2cd,0.14,false,false,near_mint,en,EUR
+Fleeting Flight,FDN,Foundations,13,normal,common,1,101513,55139100-9342-41fd-b10a-8e9932e605d4,0.06,false,false,near_mint,en,EUR
+Goldvein Pick,FDN,Foundations,253,normal,common,1,101572,a241317d-2277-467e-a8f9-aa71c944e244,0.07,false,false,near_mint,en,EUR
+Dazzling Angel,FDN,Foundations,9,normal,common,1,101468,027dc444-e544-4693-8653-3dcdda530162,0.12,false,false,near_mint,en,EUR
+Erudite Wizard,FDN,Foundations,37,normal,common,1,100835,9273c417-0fcd-4273-b24e-afff76336d0c,0.03,false,false,near_mint,en,EUR
+Giant Growth,FDN,Foundations,223,normal,common,1,101073,bd0bf74e-14c1-4428-88d8-2181a080b5d0,0.05,false,false,near_mint,en,EUR
+Gutless Plunderer,FDN,Foundations,60,normal,common,1,101567,909d7778-c7f8-4fa4-89f2-8b32e86e96e4,0.03,false,false,near_mint,en,EUR
+Gorehorn Raider,FDN,Foundations,89,normal,common,1,101551,78ce6c40-3452-4aa0-a45b-dbfd70f8d220,0.03,false,false,near_mint,en,EUR
+Claws Out,FDN,Foundations,6,normal,uncommon,1,100429,4396049c-b976-4b7f-8ecd-564e24ebd631,0.12,false,false,near_mint,en,EUR
+Grappling Kraken,FDN,Foundations,39,normal,uncommon,1,101165,d1f5cab3-3fc0-448d-8252-cd55abf5b596,0.13,false,false,near_mint,en,EUR
+Ravenous Amulet,FDN,Foundations,131,normal,uncommon,1,100744,80cadee5-6f26-4440-ad31-a8e573a90436,0.11,false,false,near_mint,en,EUR
+"Balmor, Battlemage Captain",FDN,Foundations,237,normal,uncommon,1,100142,0b45ab13-9bb6-48af-8b37-d97b25801ac8,0.14,false,false,near_mint,en,EUR
+Searslicer Goblin,FDN,Foundations,93,normal,rare,1,100845,94ad0b97-a318-4e76-ac79-b3e83417c333,0.77,false,false,near_mint,en,EUR
+Mocking Sprite,FDN,Foundations,159,foil,common,1,101624,f6792f63-b651-497d-8aa5-cddf4cedeca8,0.11,false,false,near_mint,en,EUR
+Treetop Snarespinner,FDN,Foundations,114,normal,common,2,101562,88e68fa3-159d-49a6-8ac6-afc9bd6f1718,0.04,false,false,near_mint,en,EUR 
+Name,Set code,Set name,Collector number,Foil,Rarity,Quantity,ManaBox ID,Scryfall ID,Purchase price,Misprint,Altered,Condition,Language,Purchase price currency
 Kishla Trawlers,TDM,Tarkir: Dragonstorm,50,normal,uncommon,1,104472,190fbc55-e8e9-4077-9532-1de7406baabf,0.03,false,false,near_mint,en,EUR
 Essence Anchor,TDM,Tarkir: Dragonstorm,44,normal,uncommon,1,105026,e91c4509-918e-44ba-aa13-1991199fee9f,0.03,false,false,near_mint,en,EUR
 Bewildering Blizzard,TDM,Tarkir: Dragonstorm,38,normal,uncommon,1,104807,91b25843-1aa0-484a-b6c7-0c284fe7214a,0.02,false,false,near_mint,en,EUR
